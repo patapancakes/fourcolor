@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{.Site.Name}}</title>
+		<link rel="stylesheet" href="/assets/bbs.css" type="text/css">
+		{{if ne .ViewID 0}}<link rel="stylesheet" href="/assets/viewpost.css" type="text/css">{{end}}
+		<meta charset="UTF-8">
+		<meta name="title" content="{{.Site.Name}}">
+		<meta name="description" content="{{if eq .ViewID 0}}{{.Site.Slogan}}{{else}}{{(index .Posts 0).Body}}{{end}}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		{{template "header" .}}
+		{{template "rules"}}
+		{{if eq .ViewID 0}}{{template "postform" .}}{{end}}
+		{{range .Posts}}{{template "post" .}}{{end}}
+		{{if ne .ViewID 0}}{{template "postform" .}}{{end}}
+	</body>
+</html>

@@ -1,0 +1,21 @@
+html {font-family: "MS PGothic", sans-serif; background-color: rgb(92, 132, 55); background-image: url('/assets/grass.gif'); background-attachment: fixed; line-height: 1.2em; scrollbar-color: #77DD66 white; scrollbar-width: thin; accent-color: green;}
+html ::selection {background-color: lightgreen;}
+
+a {text-decoration: none; color: green;}
+a:hover {color: darkgreen;}
+a:visited {color: rgb(96, 72, 0)}
+
+.card {padding: 8px; max-width: 400px; background-color: rgba(255, 255, 255, 0.85); margin: 8px; box-shadow: rgba(0, 0, 0, 0.5) 4px 4px;}
+.card:target {background-color: rgba(200, 255, 200, 0.85);}
+.card .info {font-weight: bolder;}
+.card .info .action {float: right;}
+.card .info .author {background-color: rgba(0, 0, 0, 0.15);}
+.card .body {white-space: pre-wrap; word-break: break-word; overflow: hidden; max-height: 200px; overflow-y: auto; scrollbar-color: rgba(92, 132, 55, 0.5) rgba(255, 255, 255, 0.5); scrollbar-width: thin;}
+
+.card#rules .body {white-space: initial;}
+.card#rules ol {list-style: inside decimal; padding: 0px; margin: 0px;}
+.card#rules li::marker {font-weight: bolder;}
+
+#postform label {font-weight: bolder;}
+#postform input#submit {float: right;}
+#postform textarea#comment {box-sizing: border-box; width: 100%; margin-top: 2px; min-height: 40px; resize: vertical;}

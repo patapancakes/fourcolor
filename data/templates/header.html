@@ -1,0 +1,6 @@
+{{define "header"}}
+<div class="card" id="header">
+	<div class="info">&starf; {{.Site.Name}}{{if ne .ViewID 0}}<a class="action" href="/">Home</a>{{end}}</div>
+	<div class="body">{{.Site.Slogan}}</div>
+</div>
+{{end}}

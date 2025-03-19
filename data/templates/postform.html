@@ -1,0 +1,11 @@
+{{define "postform"}}
+<div class="card" id="postform">
+	<form action="/post" method="post">
+		<label for="comment">{{if eq .ViewID 0}}New Thread{{else}}Reply{{end}}</label>
+		<input type="submit" id="submit" value="Post">
+		<textarea id="comment" name="comment" rows="4" required></textarea>
+		<input type="hidden" name="ticket" value="{{.Ticket}}">
+		{{if gt .ViewID 0}}<input type="hidden" name="parent" value="{{.ViewID}}">{{end}}
+	</form>
+</div>
+{{end}}

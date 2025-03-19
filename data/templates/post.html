@@ -1,0 +1,11 @@
+{{define "post"}}
+<div class="card post" id="post_{{.ID}}">
+	<div class="info">
+		<a class="id" href={{if .IsThread}}"/{{.ID}}/"{{else}}"#post_{{.ID}}"{{end}}>{{.ID}}</a>
+		<span class="author" title="{{niceauthor .Author}}">{{slice (niceauthor .Author) 0 4}}</span>
+		<span class="time" title="{{.Time.Format "Mon, 02 Jan 2006 15:04:05 MST"}}">{{nicetime .Time}}</span>
+		{{if .IsThread}}<a class="action" href="/{{.ID}}/">Reply</a>{{end}}
+	</div>
+	<div class="body">{{.Body}}</div>
+</div>
+{{end}}
